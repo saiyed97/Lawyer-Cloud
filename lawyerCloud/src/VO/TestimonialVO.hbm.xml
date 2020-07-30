@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="VO.TestimonialVO" table="testimonial_tbl">
+
+		<id name="testimonialId" type="int" column="TestimonialId">
+			<generator class="increment"/>
+		</id>
+		
+		<property name="testimonialDescription">
+			<column name="testimonialDescription"/>
+		</property>
+		
+		<property name="dateAndTime">
+			<column name="TestimonialDateAndTime"/>
+		</property>
+		
+		<property name="testimonialStatus">
+			<column name="TestimonialStatus"/>
+		</property>
+		
+		<property name="name">
+			<column name="Name"/>
+		</property>
+		
+		<many-to-one class="VO.LoginVO" name="loginVO" column="loginId" lazy="false"></many-to-one>
+		
+	</class>
+	
+	
+		
+</hibernate-mapping>

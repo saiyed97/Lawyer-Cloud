@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="VO.LawyerRegisterVO" table="lawyerRegister_tbl">
+
+		<id name="registerId" type="int" column="LawyerRegisterId">
+			<generator class="increment"/>
+		</id>
+		
+		<property name="firstName">
+			<column name="FirstName"/>
+		</property>
+		
+		<property name="lastName">
+			<column name="LastName"/>
+		</property>
+				
+		<property name="mobileNumber">
+			<column name="MobileNumber"/>
+		</property>
+		
+		<property name="fileName">
+			<column name="FileName"/>
+		</property>
+		
+		<property name="filePath">
+			<column name="FilePath"/>
+		</property>
+		
+		<many-to-one class="VO.StateVO" name="stateVO" column="stateId" lazy="false"></many-to-one>
+		
+		<many-to-one class="VO.CityVO" name="cityVO" column="cityId" lazy="false"></many-to-one>
+		
+		<many-to-one class="VO.AreaVO" name="areaVO" column="areaId" lazy="false"></many-to-one>
+		
+		<property name="address">
+			<column name="Address"/>
+		</property>
+		
+		<many-to-one class="VO.CategoryVO" name="categoryVO" column="categoryId" lazy="false"></many-to-one>
+		
+		<many-to-one class="VO.SubCategoryVO" name="subCategoryVO" column="subCategoryId" lazy="false"></many-to-one>
+		
+		<property name="experience">
+			<column name="Experience"/>
+		</property>
+		
+		<property name="qualification">
+			<column name="Qualification"/>
+		</property>
+		
+		<many-to-one class="VO.LoginVO" name="loginVO" column="loginId" lazy="false"></many-to-one>
+		
+	</class>
+		
+</hibernate-mapping>

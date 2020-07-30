@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/lawyer_cloud</property>
+
+		<property name="hibernate.connection.username">root</property>
+
+		<property name="hibernate.connection.password">test</property>
+
+		<property name="hibernate.connection.pool_size">10</property>
+
+		<property name="show_sql">true</property>
+
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		
+		<mapping resource="VO/StateVO.hbm.xml"></mapping>
+		
+		<mapping resource="VO/CategoryVO.hbm.xml"></mapping>
+		
+		<mapping resource="VO/CityVO.hbm.xml"></mapping>
+		
+		<mapping resource="VO/SubCategoryVO.hbm.xml"></mapping>
+		
+		<mapping resource="VO/AreaVO.hbm.xml"></mapping>
+		
+		<mapping resource="VO/LawyerRegisterVO.hbm.xml"></mapping>
+		
+		<mapping resource="VO/ClientRegisterVO.hbm.xml"></mapping>
+		
+		<mapping resource="VO/LoginVO.hbm.xml"></mapping>
+		
+		<mapping resource="VO/ComplainVO.hbm.xml"></mapping>
+		
+		<mapping resource="VO/FeedbackVO.hbm.xml"></mapping>
+		
+		<mapping resource="VO/RequestLawyerVO.hbm.xml"></mapping>
+		
+		<mapping resource="VO/ContactUsVO.hbm.xml"></mapping>
+		
+		<mapping resource="VO/TestimonialVO.hbm.xml"></mapping>
+						
+	</session-factory>
+
+</hibernate-configuration>

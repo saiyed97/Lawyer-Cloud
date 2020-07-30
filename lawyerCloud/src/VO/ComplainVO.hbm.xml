@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="VO.ComplainVO" table="complain_tbl">
+
+		<id name="complainId" type="int" column="ComplainId">
+			<generator class="increment"/>
+		</id>
+		
+		<property name="name">
+			<column name="Name"/>
+		</property>
+		
+		<property name="complainSubject">
+			<column name="ComplainSubject"/>
+		</property>
+		
+		<property name="complainDescription">
+			<column name="ComplainDescription"/>
+		</property>
+		
+		<property name="complainDateAndTime">
+			<column name="ComplainDateAndTime"/>
+		</property>
+		
+		<property name="complainStatus">
+			<column name="ComplainStatus"/>
+		</property>
+		
+		<property name="replyDescription">
+			<column name="ReplyDescription"/>
+		</property>
+		
+		<many-to-one class="VO.LoginVO" name="fromLoginVO" column="complainFrom" lazy="false"></many-to-one>
+		
+		<many-to-one class="VO.LoginVO" name="toLoginVO" column="complainTo" lazy="false"></many-to-one>
+		
+		<property name="toName">
+			<column name="ToName"/>
+		</property>
+		
+		<!-- <many-to-one class="VO.ClientRegisterVO" name="clientRegisterVO" column="registerId" lazy="false"></many-to-one> -->
+		
+	</class>
+	
+	
+		
+</hibernate-mapping>

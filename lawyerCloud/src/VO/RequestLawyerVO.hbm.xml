@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="VO.RequestLawyerVO" table="requestLawyer_tbl">
+
+		<id name="requestLawyerId" type="int" column="RequestLawyerId">
+			<generator class="increment"/>
+		</id>
+		
+		<many-to-one class="VO.LawyerRegisterVO" name="lawyerRegisterVO" column="lawyerId" lazy="false"></many-to-one>
+		
+		<many-to-one class="VO.LoginVO" name="loginVO" column="ClientId" lazy="false"></many-to-one>
+		
+		<many-to-one class="VO.CategoryVO" name="categoryVO" column="categoryId" lazy="false"></many-to-one>
+		
+		<property name="mobileNumber">
+			<column name="ClientContactNumber"/>
+		</property>
+		
+		<property name="requestDescription">
+			<column name="RequestDescription"/>
+		</property>
+		
+		<property name="requestDateAndTime">
+			<column name="RequestDateAndTime"/>
+		</property>
+		
+		<property name="requestStatus">
+			<column name="RequestStatus"/>
+		</property>
+		
+		<property name="requestReplyDescription">
+			<column name="RequestReplyDescription"/>
+		</property>
+				
+		
+		
+	</class>
+	
+	
+		
+</hibernate-mapping>
